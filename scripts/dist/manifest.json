@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "generatedAt": "2026-10-31T04:42:03.019Z",
+  "generatedAt": "2026-10-31T04:52:46.604Z",
   "scripts": [
     {
       "package": "app.simple.inure.play",
@@ -41,6 +41,14 @@
       "sha256": "3147c4f01475c99b245b319bf61f6937b5fc1b48f66bb91064e45f6420f8333c",
       "size": 1880,
       "author": null
+    },
+    {
+      "package": "com.example.testapp",
+      "name": "Test App",
+      "file": "com.example.testapp.js",
+      "sha256": "f3642bae3ba2e5a9de8cfeeb6639d9fd04b45fd084d954febcb61d0172e4411d",
+      "size": 104,
+      "author": "testbot"
     },
     {
       "package": "com.kiloo.subwaysurf",
