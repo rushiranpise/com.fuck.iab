@@ -4,30 +4,10 @@ import JavaBridge from "../libs/frida-java-bridge.js";
 
 export const Java = JavaBridge
 
-// Android 17 needs the JVMTI plugin for the bridge to find the Thread fields, while
-// loading that plugin late on older releases can abort ART, so it is only asked for
-// where it is required.
-function androidSdkInt() {
-    try {
-        const libc = Process.findModuleByName('libc.so');
-        const getprop = new NativeFunction(
-            libc.findExportByName('__system_property_get'),
-            'int',
-            ['pointer', 'pointer']
-        );
-        const value = Memory.alloc(92); // PROP_VALUE_MAX
-
-        getprop(Memory.allocUtf8String('ro.build.version.sdk'), value);
-
-        return parseInt(value.readUtf8String() || '0', 10);
-    } catch (e) {
-        return 0;
-    }
-}
-
-const androidSdk = androidSdkInt();
-
-globalThis.FRIDA_JAVA_BRIDGE_DISABLE_JVMTI = androidSdk > 0 && androidSdk < 37;
+// Keep the JVMTI plugin out of the app process, as the stock app does. Loading it
+// late aborts ART on a non-debuggable runtime (seen on Life360), and the pinned
+// bridge resolves the ART internals without it.
+globalThis.FRIDA_JAVA_BRIDGE_DISABLE_JVMTI = true;
 
 try { APP_SCRIPT_GOES_HERE } catch(e) { console.log(e) }
 
