@@ -1,3 +1,4 @@
+import "./patch-bridge.js";
 import { execSync } from "node:child_process";
 import { readdirSync, existsSync, unlinkSync, readFileSync, writeFileSync, mkdirSync, rmSync } from "node:fs";
 import { createHash } from "node:crypto";
