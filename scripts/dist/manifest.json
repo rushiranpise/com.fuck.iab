@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "generatedAt": "2026-11-02T19:13:19.865Z",
+  "generatedAt": "2026-11-02T19:18:59.190Z",
   "scripts": [
     {
       "package": "app.simple.inure.play",
@@ -54,8 +54,8 @@
       "package": "com.life360.android.safetymapd",
       "name": "Life360",
       "file": "com.life360.android.safetymapd.js",
-      "sha256": "60d51aba766f4734494305afce3081f0bb8d7e644a3115248e19ec8b4aa96cbf",
-      "size": 316,
+      "sha256": "9c75e9afcd95b55e4b8e2af9ecee659386834c301c2ba7c274b11c68357cc8a9",
+      "size": 2242,
       "author": "Fexture69"
     },
     {
